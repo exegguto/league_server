@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "student_classes",
+  "info": {
+    "singularName": "student-class",
+    "pluralName": "student-classes",
+    "displayName": "StudentClass",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "subjects": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subject.subject",
+      "inversedBy": "student_classes"
+    },
+    "UID": {
+      "type": "uid",
+      "required": true,
+      "minLength": 8
+    }
+  }
+}
